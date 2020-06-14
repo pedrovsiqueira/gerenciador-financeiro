@@ -1,18 +1,20 @@
 const request = require("supertest");
 
-const app = require("../src/app");
+const app = require("../../src/app");
 
 test("Deve listar todos os usuários", async () => {
   const resp = await request(app).get("/users");
   expect(resp.status).toBe(200);
-  expect(resp.body).toHaveLength(1);
-  expect(resp.body[0]).toHaveProperty("name", "John Doe");
+  expect(resp.body.length).toBeGreaterThan(0);
 });
 
 test("Deve inserir usuário com sucesso", async () => {
-  const resp = await request(app)
-    .post("/users")
-    .send({ name: "Pedro Siqueira", email: "pedrosiqueira@gmail.com" });
+  const email = `${Date.now()}@mail.com`;
+  const resp = await request(app).post("/users").send({
+    name: "Pedro Siqueira",
+    email,
+    password: "123456",
+  });
   expect(resp.status).toBe(201);
   expect(resp.body.name).toBe("Pedro Siqueira");
 });
