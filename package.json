@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch",
-    "start": "node /src/server.js"
+    "secure-mode": "jest --watchAll"
   },
   "repository": {
     "type": "git",
