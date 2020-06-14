@@ -1,4 +1,4 @@
-const request = supertest("supertest");
+const request = require("supertest");
 
 const app = require("../src/app");
 
