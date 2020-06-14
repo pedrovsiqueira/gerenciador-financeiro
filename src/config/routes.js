@@ -1,3 +1,4 @@
+//ligando rotas do /routes/user com app
 module.exports = (app) => {
   app
     .route("/users")

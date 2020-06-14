@@ -1,3 +1,4 @@
+//exportando pelo consign
 module.exports = () => {
   const findAll = (req, res) => {
     const users = [{ name: "John Doe", email: "john@mail.com" }];
