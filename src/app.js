@@ -10,11 +10,11 @@ app.get("/users", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-  const user = {
-    name: "Pedro Siqueira",
-    email: "pedrosiqueira@gmail.com",
-  };
-  res.status(201).json(user)
+  // const user = {
+  //   name: "Pedro Siqueira",
+  //   email: "pedrosiqueira@gmail.com",
+  // };
+  // res.status(201).json(user)
 });
 
 module.exports = app;
