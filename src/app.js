@@ -9,4 +9,12 @@ app.get("/users", (req, res) => {
   res.status(200).json(users);
 });
 
+app.post("/users", (req, res) => {
+  const user = {
+    name: "Pedro Siqueira",
+    email: "pedrosiqueira@gmail.com",
+  };
+  res.status(201).json(user)
+});
+
 module.exports = app;
