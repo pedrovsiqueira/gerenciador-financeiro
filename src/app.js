@@ -1,24 +1,17 @@
 const app = require("express")();
 const consign = require("consign");
 
-consign({ cwd: "src" }).include("./config/middlewares.js").into(app);
+consign({ cwd: "src", verbose: false })
+  //adicionando os middlewares
+  .include("./config/middlewares.js")
+  //adicionando as rotas
+  .then("./routes")
+  //arquivo com as rotas
+  .then("./config/routes.js")
+  .into(app);
 
 app.get("/", (req, res) => {
   res.status(200).send();
-});
-
-app.get("/users", (req, res) => {
-  const users = [{ name: "John Doe", email: "john@mail.com" }];
-  res.status(200).json(users);
-});
-
-app.post("/users", (req, res) => {
-  res.status(201).json(req.body);
-  // const user = {
-  //   name: "Pedro Siqueira",
-  //   email: "pedrosiqueira@gmail.com",
-  // };
-  // res.status(201).json(user)
 });
 
 module.exports = app;
