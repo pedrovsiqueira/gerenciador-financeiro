@@ -1,4 +1,7 @@
 const app = require("express")();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.status(200).send();
@@ -10,6 +13,7 @@ app.get("/users", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
+  res.status(201).json(req.body);
   // const user = {
   //   name: "Pedro Siqueira",
   //   email: "pedrosiqueira@gmail.com",
