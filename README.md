@@ -4,7 +4,7 @@
 
 Gerenciador financeiro was built to practice TDD tests for Rest API using jest, database creation using knex for PostgresSQL,authentication and token generation using JWT.
 
-![Desktop views]('/src/assets/node.svg.png')
+![Desktop views]('/src/assets/node.png')
 
 ### Built With:
 
