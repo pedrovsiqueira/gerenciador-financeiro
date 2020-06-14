@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src/** test/** --fix"
+    "lint": "eslint src/** test/** --fix",
+    "secure-mode": "jest --watch",
+    "start": "node /src/server.js"
   },
   "repository": {
     "type": "git",
